@@ -66,6 +66,7 @@ export class MakeComponent implements OnInit {
 
   submitPoll(body){
     console.log("Sending request")
+    console.log("http://142.93.192.228")
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
     return this.http.post('http://142.93.192.228:3000/make', body,{headers:headers}).toPromise().then(
