@@ -48,7 +48,7 @@ export class PollComponent implements OnInit {
       let selected = <HTMLFormElement>document.getElementById("myForm")
       let headers = new Headers()
       headers.append('Content-Type', 'application/json')
-      let body = {choice: this.choice-1}
+      let body = {choice: this.choice}
       console.log(body)
       return this.http.post('http://142.93.192.228:3000/poll/'+this.id, body,{headers:headers}).toPromise().then(
         res =>{
