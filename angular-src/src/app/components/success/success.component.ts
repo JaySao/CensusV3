@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Poll } from '../../classes/poll';
-import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-success',
@@ -13,11 +13,14 @@ export class SuccessComponent implements OnInit {
   poll:Poll
   pollLink = "poll/"+this.id
   pollResults = "results/"+this.id
-  constructor(private activatedRoute:ActivatedRoute) { }
+  constructor(private activatedRoute:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     
 
+  }
+  goToPoll(){
+    this.router.navigate(['/poll',this.id])
   }
 
 
