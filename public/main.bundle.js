@@ -267,9 +267,10 @@ var MakeComponent = (function () {
     MakeComponent.prototype.submitPoll = function (body) {
         var _this = this;
         console.log("Sending request");
+        console.log("http://142.93.192.228");
         var headers = new __WEBPACK_IMPORTED_MODULE_2__node_modules_angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/make', body, { headers: headers }).toPromise().then(function (res) {
+        return this.http.post('http://142.93.192.228:3000/make', body, { headers: headers }).toPromise().then(function (res) {
             console.log("We got a response");
             console.log(res['_body']);
             var jsonBody = res['_body'];
@@ -370,7 +371,7 @@ var PollComponent = (function () {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_3__node_modules_angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/poll/' + this.id, { headers: headers }).toPromise().then(function (res) {
+        return this.http.get('http://142.93.192.228:3000/poll/' + this.id, { headers: headers }).toPromise().then(function (res) {
             var jsonBody = res['_body'];
             var data = JSON.parse(jsonBody);
             console.log(data);
@@ -399,7 +400,7 @@ var PollComponent = (function () {
             headers.append('Content-Type', 'application/json');
             var body = { choice: this.choice - 1 };
             console.log(body);
-            return this.http.post('http://localhost:3000/poll/' + this.id, body, { headers: headers }).toPromise().then(function (res) {
+            return this.http.post('http://142.93.192.228:3000/poll/' + this.id, body, { headers: headers }).toPromise().then(function (res) {
                 console.log(res);
                 _this.router.navigate(['/results/', _this.id]);
             }, function (err) {
@@ -463,7 +464,7 @@ var ResultsComponent = (function () {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_3__node_modules_angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3000/poll/' + this.id, { headers: headers }).toPromise().then(function (res) {
+        return this.http.get('http://142.93.192.228:3000/poll/' + this.id, { headers: headers }).toPromise().then(function (res) {
             var jsonBody = res['_body'];
             var data = JSON.parse(jsonBody);
             console.log(data);
