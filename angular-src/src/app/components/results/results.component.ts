@@ -23,7 +23,7 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/poll/'+this.id,{headers:headers}).toPromise().then(
+    return this.http.get('http://142.93.192.228:3000/poll/'+this.id,{headers:headers}).toPromise().then(
       res =>{
         let jsonBody = res['_body']
         let data = JSON.parse(jsonBody)

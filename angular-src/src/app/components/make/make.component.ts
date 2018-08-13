@@ -68,7 +68,7 @@ export class MakeComponent implements OnInit {
     console.log("Sending request")
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post('http://localhost:3000/make', body,{headers:headers}).toPromise().then(
+    return this.http.post('http://142.93.192.228:3000/make', body,{headers:headers}).toPromise().then(
       res =>{
         console.log("We got a response")
         console.log(res['_body'])

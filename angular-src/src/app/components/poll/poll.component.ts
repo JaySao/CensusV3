@@ -18,7 +18,7 @@ export class PollComponent implements OnInit {
   ngOnInit() {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.get('http://localhost:3000/poll/'+this.id,{headers:headers}).toPromise().then(
+    return this.http.get('http://142.93.192.228:3000/poll/'+this.id,{headers:headers}).toPromise().then(
       res =>{
         let jsonBody = res['_body']
         let data = JSON.parse(jsonBody)
@@ -50,7 +50,7 @@ export class PollComponent implements OnInit {
       headers.append('Content-Type', 'application/json')
       let body = {choice: this.choice-1}
       console.log(body)
-      return this.http.post('http://localhost:3000/poll/'+this.id, body,{headers:headers}).toPromise().then(
+      return this.http.post('http://142.93.192.228:3000/poll/'+this.id, body,{headers:headers}).toPromise().then(
         res =>{
           console.log(res)
           this.router.navigate(['/results/',this.id])
