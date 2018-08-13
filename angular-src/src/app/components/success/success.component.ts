@@ -22,6 +22,9 @@ export class SuccessComponent implements OnInit {
   goToPoll(){
     this.router.navigate(['/poll',this.id])
   }
+  goToResults(){
+    this.router.navigate(['/results',this.id])
+  }
 
 
 }
