@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h1></h1>
+    <form method="POST" action="/make" name="form1">
+        <div id="form-group">
+          <label>Question:</label>
+          <input class="form-control" id="question" type="text" required="required" />
+        </div>
+
+        <!-- <div id="form-group">
+          <label>Answer1:</label>
+          <input class="form-control" name="answer0" type="text" required="required" />
+        </div>
+        <div id="form-group"><label>Answer2:</label><input class="form-control" name="answer1" type="text" required="required" /></div>
+        <div id="form-group"><label>Answer3:</label><input class="form-control" name="answer2" type="text" required="required" /></div>
+        <div id="form-group"><label>Answer4:</label><input class="form-control" name="answer3" type="text" required="required" /></div>
+        <br/> -->
+
+        <div class="form-group" *ngFor="let answer of answers">
+          <label>Answer Choice:</label>
+          <input class="form-control" type="text" required="required" attr.id="{{answer.id}}"/>
+        </div>
+        <input class="btn btn-info" (click)="makeField()" value="Add Field" type="button">
+
+        <input class="btn btn-primary float-right" type="submit" value="Create!" (click)="makePoll()"/>
+      </form>
+</div>

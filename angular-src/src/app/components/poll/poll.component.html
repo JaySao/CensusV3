@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>{{poll.question}}</h1>
+  <form action="" id="myForm">
+    <div class="answerChoices" *ngFor="let answer of answers">
+        <input class="myButton" name="choice" type="radio" attr.id="{{answer.id}}" (click)="chooseChoice(answer.choice)">
+        <span>{{answer.choice}}</span>
+      </div>
+  </form>
+  <input type="button" class="btn-primary" value="submit" (click)="submitButton()">
+</div>
